@@ -56,7 +56,7 @@
 		position:absolute;
 		top:24px;
 		left:0;
-		width:159px;
+		width:0;
 		height:2px;
 		transition:all 600ms ease
 	}
@@ -184,15 +184,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 960px
-}
-
-#menu-line {
-    position: absolute;
-    top: 24px;
-    left: 0;
-    width: 159px;
-    height: 2px;
-    transition: all 600ms ease
 }
 
 #menu {
@@ -510,7 +501,7 @@ body {
 	<!-- <div id="header">Header</div> -->
 
 	<ul id="menu">
-		<li data-menuanchor="aboutme" class="menu-active"><a href="#aboutme">关于我</a></li>
+		<li data-menuanchor="aboutme" class="active"><a href="#aboutme">关于我</a></li>
 		<li data-menuanchor="technical"><a href="#technical">技能</a></li>
 		<li data-menuanchor="exprience"><a href="#exprience">经历</a></li>
 		<li data-menuanchor="reffernces"><a href="#reffernces">项目</a></li>
@@ -715,95 +706,43 @@ body {
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.waterfall.js"></script>
 	<script type="text/javascript">
+	var d = fp_utils.$, line = d('#menu-line')[0];
+
+	function F() {
+        var e = this.parentNode;
+        N(e.offsetLeft, e.offsetWidth);
+    }
+    
+    function N(e, t) {
+    	var b = 40;
+        line.style.left = e + b / 2 + "px";
+        line.style.width = t - b + "px";
+    }
+
 	// #f4f7f9, #f3f2f3
-	var myFullpage = new fullpage('#fullpage', {
+	var fullpage = new fullpage('#fullpage', {
 		licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 		anchors: ['aboutme', 'technical', 'exprience', 'reffernces'],
 		// sectionsColor: ['#ffffff', '#f4f7f9', '#ffffff', '#f4f7f9'],
 		sectionsColor: ['#000', '#00f', '#000', '#00f'],
 		menu: '#menu',
 		navigation: true,
-		css3: true
+		css3: true,
+
+		onLeave: function(origin, destination, direction) {
+			var destmenu = d("#menu li a")[destination['index']];
+			F.call(destmenu);
+		}
+	});
+
+	$().ready(function() {
+		var activemenu = d("#menu .active a")[0];
+		F.call(activemenu);
+
+		d("#menu li a").forEach(function(e) {
+			e.addEventListener("mousedown", F);
+		});
 	});
 </script>
-<script type ="text/javascript" >!
-function(e, t) {
-    "use strict";
-    var n, i, a, s, l, o, u, c, r, f, d = fp_utils.$,
-    p = fp_utils.after,
-    g = fp_utils.hasClass,
-    h = fp_utils.addClass,
-    v = fp_utils.toggleClass,
-    m = fp_utils.removeClass,
-    E = fp_utils.siblings,
-    L = fp_utils.preventDefault,
-    w = ".language",
-    y = d("#menu-line")[0],
-    _ = d(".menu-active").offsetWidth,
-    x = 20,
-    k = 0,
-    b = 40,
-    T = "active";
-    function C() {
-        b = 2 * parseFloat(getComputedStyle(fp_utils.$(".menu-active a")[0]).paddingLeft)
-    }
-    function S(e) {
-        switch (e.keyCode) {
-        case 27:
-            g(d(".examples")[0], T) && H()
-        }
-    }
-    function W() {
-        g(this, "left") ? fullpage_api.moveSlideLeft() : fullpage_api.moveSlideRight()
-    }
-    function q() {
-        var n = decodeURIComponent(t.location.hash.substr(1));
-        n.length && (d("." + n, e).length && fp_utils.trigger(d(".show-examples")[0], "click"))
-    }
-    function A() {
-        clearTimeout(n),
-        n = setTimeout(R, 350)
-    }
-    function R() {
-        if (_ = d(".menu-active")[0].offsetWidth, t.innerWidth <= 900) {
-            C();
-            var e = d("#menu a")[0];
-            F.call(e),
-            k = e.offsetLeft
-        } else t.innerWidth > 900 && (C(), F.call(d("#menu a")[0]), k = 0)
-    }
-    function P(e) {
-        v(d(e)[0], T)
-    }
-    function U(e) {
-        void 0 !== e && (L(e), (e || t.event).stopPropagation()),
-        P(w)
-    }
-    function F() {
-        var e = this.parentNode;
-        N(e.offsetLeft, e.offsetWidth)
-    }
-    function N(e, t) {
-        y.style.left = e + b / 2 + "px",
-        y.style.width = t - b + "px"
-    }
-    function $(e) {
-        L(e);
-        var t = this.getAttribute("href").substr(1);
-        h(this, T),
-        m(E(this), T);
-        var n = d('[data-tab="' + t + '"]')[0];
-        h(n, T),
-        m(E(n), T)
-    }
-    y.style.width = _ - b + "px",
-    y.style.left = x + "px",
-    A(),
-    d("#menu li a").forEach(function(e) {
-        e.addEventListener("mousedown", F)
-    })
-} (document, window); 
-</script>
-
 </body>
 </html>
