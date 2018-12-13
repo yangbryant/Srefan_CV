@@ -25,7 +25,7 @@
         </div>
         <div id="description">
           <p>
-            我是来自山东烟台的iOS开发工程师，2012年的毕业于西电，2012年开始第一份嵌入式软件开发工作，2015年开始从事iOS移动开发，至今已经有6年多开发工作经验。
+            我是来自山东烟台的iOS开发工程师，2012年的毕业于西电，职业生涯开始于嵌入式开发，后从事于iOS移动开发，至今已经有6年多开发工作经验。
           </p>
           <p>热爱Coding，并且一直保持对新技术的学习热情，有良好的编程能力和代码风格。熟练使用C/C++、Objective-C、Swift、JavaScript(主要是Node.js)；对iOS设计模式、多线程开发、RunLoop、CocoaPods、性能调优等有实际的开发经验；对前端开发有一定的认识，比如HTML5、CSS3以及JavaScript等等；对流行的Web应用开发框架有一定的了解，学习了Node.js、Redis，MongoDB等技术，在个人项目中使用，希望在大型开发项目中得到实践提升。
           </p>
@@ -42,18 +42,52 @@
 
     <div class="section technical" id="section-2">
       <div class="intro container">
-        <h1>How to do it</h1>
-        <p>You will need to place your header and footer outside the plugin's wrapper.
-          This way it won't move on scrolling. Take a look at the source code of this page.
-        </p>
+        <div class="heading">
+          <h2>专业技能</h2>
+        </div>
+        <div class="skill-container">
+          <div>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>ES5/6</span>
+            <span>Lodash</span>
+            <span>JQuery</span>
+            <span>Zepto</span>
+            <span>Vue</span>
+            <span>Grunt</span>
+            <span>Gulp</span>
+            <span>前端工程化</span>
+            <span>Node/Express</span>
+            <span>Java</span>
+            <span>Restful</span>
+            <span>HTTP</span>
+            <span>Git</span>
+            <span>Linux</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="section exprience" id="section-3">
+    <div class="section education" id="section-3">
       <div class="intro container">
         <div class="heading">
-          <h2>经历</h2>
-          <p>2012年6月，毕业于西电，正式开始了自己的软件开发工程师生涯。从一个职场新人摸爬滚打到一个技术方向多元化的老攻城狮，从一个嵌入式软件转型到App开发，立志在互联网行业创出一番天地，持续努力向全栈工程师的目标前进。</p>
+          <h2>教育背景</h2>
+          <ul>
+            <li>
+              <p class="time">2008.08 - 2012.06</p>
+              <p class="school">西安电子科技大学 本科</p>
+              <p class="major">通信工程学院 <strong>通信工程</strong></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section exprience" id="section-4">
+      <div class="intro container">
+        <div class="heading">
+          <h2>工作经历</h2>
+          <!-- <p>2012年6月，毕业于西电，正式开始了自己的软件开发工程师生涯。从一个职场新人摸爬滚打到一个技术方向多元化的老攻城狮，从一个嵌入式软件转型到App开发，立志在互联网行业创出一番天地，持续努力向全栈工程师的目标前进。</p> -->
         </div>
         <div class="row workDetails">
           <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
@@ -103,30 +137,14 @@
             </div>
           </div>
         </div>
-        <div class="row workDetails">
-          <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-            <div class="workYear">
-              <span class="prevY">06,2012</span>
-              <span class="afterY">08,2008</span>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
-            <div class="arrowpart"></div>
-            <div class="exCon">
-              <h4>西安电子科技大学</h4>
-              <h5>通信工程本科生</h5>
-              <p>在四年的大学生活中我主要学习了比如操作系统，计算机网络，C/C++编程语言，数据结构，微机原理和通信系统等等。而在大学期间，自学并完成了几个单片机的小项目，打下了不错的嵌入式软件开发的基础。</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
-    <div class="section reffernces" id="section-4">
+    <div class="section reffernces" id="section-5">
       <div class="intro container">
         <div class="heading">
           <h2>项目</h2>
-          <p>下面包括了自己的开源项目，公司项目，推荐的网站等。</p>
+          <!-- <p>下面包括了自己的开源项目，公司项目，推荐的网站等。</p> -->
         </div>
         <div class="row waterfall" data-col-min-width="300">
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 refBox">
@@ -208,6 +226,7 @@
   <ul id="menu">
     <li data-menuanchor="aboutme" class="active"><a href="#aboutme">关于我</a></li>
     <li data-menuanchor="technical"><a href="#technical">技能</a></li>
+    <li data-menuanchor="education"><a href="#education">教育</a></li>
     <li data-menuanchor="exprience"><a href="#exprience">经历</a></li>
     <li data-menuanchor="reffernces"><a href="#reffernces">项目</a></li>
     <li id="menu-line"></li>
@@ -234,8 +253,8 @@
     // #f4f7f9, #f3f2f3
     var fullpage = new fullpage('#fullpage', {
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-      anchors: ['aboutme', 'technical', 'exprience', 'reffernces'],
-      sectionsColor: ['#ffffff', '#f4f7f9', '#ffffff', '#f4f7f9'],
+      anchors: ['aboutme', 'technical', 'education', 'exprience', 'reffernces'],
+      sectionsColor: ['#f4f7f9', '#ffffff', '#f4f7f9', '#ffffff', '#f4f7f9'],
       menu: '#menu',
       navigation: true,
       css3: true,
