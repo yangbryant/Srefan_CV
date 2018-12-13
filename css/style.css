@@ -31,6 +31,43 @@ a {
     }
 }
 
+/*----------------------------------------------------
+ 0. Section Setup
+------------------------------------------------------*/
+
+/* Style for our header texts
+* --------------------------------------- */
+
+h1{
+    font-size: 80px;
+    font-family: arial,helvetica;
+    color: #fff;
+    margin:0;
+    padding:0;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+
+.section{
+    text-align:center;
+}
+
+/* Fixed header.
+* --------------------------------------- */
+
+#header{
+    position:fixed;
+    height: 50px;
+    display:block;
+    width: 100%;
+    background: #333;
+    z-index:9;
+    text-align:center;
+    color: #f2f2f2;
+    padding: 20px 0 0 0;
+    top:0px;
+}
 
 /*----------------------------------------------------
  1. Menu Setup
@@ -47,14 +84,14 @@ a {
     -moz-font-smoothing: antialiased;
     letter-spacing: 1px;
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: 18px;
 }
 
 #menu li {
     display:inline-block;
     margin: 10px 0;
     color: #4c404d;
-    padding: 0 1.1em 1.1em 1.1em;
+    padding: 0 18px 18px 18px;
 
 }
 
