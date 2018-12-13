@@ -36,53 +36,47 @@ a {
  1. Menu Setup
 ------------------------------------------------------*/
 
-#menu{
-    position:fixed;
+#menu {
+    position: fixed;
     list-style: none;
-    top:20px;
+    top: 20px;
     right: 20px;
     height: 40px;
     z-index: 70;
     -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
     letter-spacing: 1px;
-    padding: 0;
-    margin:0;
+    font-weight: 300;
+    font-size: 1.2em;
 }
 
 #menu li {
     display:inline-block;
-    margin: 10px;
-    color: #000;
-    background:#fff;
-    background: rgba(255,255,255, 0.5);
-    -webkit-border-radius: 10px;
-            border-radius: 10px;
+    margin: 10px 0;
+    color: #4c404d;
+    padding: 0 1.1em 1.1em 1.1em;
+
 }
 
-/*
-#menu li.active{
-    background:#666;
-    background: rgba(0,0,0, 0.5);
-    color: #fff;
+#menu li a:hover{
+    color: #ef7674;
 }
-#menu li a{
-    text-decoration:none;
-    color: #000;
-}
-#menu li.active a:hover{
-    color: #000;
-}
-#menu li:hover{
-    background: rgba(255,255,255, 0.8);
-}
-#menu li a,
+
 #menu li.active a{
-    padding: 9px 18px;
-    display:block;
+    color: #ef7674;
+    font-weight: 500;
 }
-#menu li.active a{
-    color: #fff;
-}*/
+
+#menu #menu-line{
+    position:absolute;
+    background: #ef7674;
+    top:30px;
+    left:0;
+    width:0;
+    height:3px;
+    transition:all 600ms ease;
+    padding: 0 0 0 0;
+}
 
 /*----------------------------------------------------
  2. Document Setup
