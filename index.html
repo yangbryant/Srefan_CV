@@ -24,9 +24,7 @@
           <h2>我叫李洋</h2>
         </div>
         <div id="description">
-          <p>
-            我是来自山东烟台的iOS开发工程师，2012年的毕业于西电，职业生涯开始于嵌入式开发，后从事于iOS移动开发，至今已经有6年多开发工作经验。
-          </p>
+          <p id='yearP'></p>
           <p>热爱Coding，并且一直保持对新技术的学习热情，有良好的编程能力和代码风格。熟练使用C/C++、Objective-C、Swift、JavaScript(主要是Node.js)；对iOS设计模式、多线程开发、RunLoop、CocoaPods、性能调优等有实际的开发经验；对前端开发有一定的认识，比如HTML5、CSS3以及JavaScript等等；对流行的Web应用开发框架有一定的了解，学习了Node.js、Redis，MongoDB等技术，在个人项目中使用，希望在大型开发项目中得到实践提升。
           </p>
           <p>乐于分享，长期活跃在 <a href=https://github.com/yangbryant">GitHub</a> 上。有我自己的 <a href="https://blog.srefan.com/">个人技术博客</a>，分享一些开发经验和工具技巧。
@@ -88,7 +86,7 @@
           <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
             <div class="workYear">
               <span class="prevY">03,2019</span>
-              <span class="afterY">至今</span>
+              <span class="afterY">10,2019</span>
             </div>
           </div>
           <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea">
@@ -160,10 +158,10 @@
           <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 refBox">
             <div class="refBoxcon">
               <p>
-                负责公司移动医疗 <a href="#reffernces">心管家</a> App的开发与维护工作。
+                负责公司移动医疗 <a href="https://apps.apple.com/cn/app/xin-guan-jia/id1248196358">心管家</a> App的开发与维护工作。
               </p>
               <h3>
-                <a href="#reffernces">CardioGuard</a>
+                <a href="https://apps.apple.com/cn/app/xin-guan-jia/id1248196358">CardioGuard</a>
               </h3>
             </div>
           </div>
@@ -264,6 +262,11 @@
     });
 
     $().ready(function() {
+      var yearP = document.getElementById("yearP");
+      var curDate = new Date();
+      var yearWorks = curDate.getFullYear() - 2012;
+			yearP.innerHTML="我是来自山东烟台的iOS开发工程师，2012年的毕业于西电，职业生涯开始于嵌入式开发，后从事于iOS移动开发，至今已经有"+yearWorks+"年多开发工作经验。";
+
       var activemenu = d("#menu .active a")[0];
       F.call(activemenu);
 
